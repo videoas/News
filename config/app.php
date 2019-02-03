@@ -176,6 +176,10 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+        //для редактора
+        Unisharp\Ckeditor\ServiceProvider::class,
+
+        App\Providers\BlogServiceProvider::class,
 
     ],
 
