@@ -12,12 +12,17 @@
           <p><span class="label label-primary">Материалов {{ $count_articles }}</span></p>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-2">
+        <div class="jumbotron">
+          <p><span class="label label-primary">Фото 0</span></p>
+        </div>
+      </div>
+      <div class="col-sm-2">
         <div class="jumbotron">
           <p><span class="label label-primary">Посетителей 0</span></p>
         </div>
       </div>
-      <div class="col-sm-3">
+      <div class="col-sm-2">
         <div class="jumbotron">
           <p><span class="label label-primary">Сегодня 0</span></p>
         </div>
@@ -25,7 +30,7 @@
     </div>
 
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <a class="btn btn-block btn-default" href="{{route('admin.category.create')}}">Создать категорию</a>
         @foreach ($categories as $category)
           <a class="list-group-item" href="{{route('admin.category.edit',$category)}}">
@@ -35,18 +40,29 @@
               </p>
           </a>
         @endforeach 
-      </div>
-      <div class="col-sm-6">
-        <a class="btn btn-block btn-default" href="{{route('admin.article.create')}}">Создать материал</a>
-        @foreach ($articles as $article)
-           <a class="list-group-item" href="{{route('admin.article.edit',$article)}}">
-            <h4 class="list-group-item-heading">{{$article->title}}</h4>
-            <p class="list-group-item-text">
-              {{$article->categories()->pluck('title')->implode(', ')}}
-            </p>
-          </a>
-        @endforeach 
-      </div>
+        </div>
+        <div class="col-sm-4">
+          <a class="btn btn-block btn-default" href="{{route('admin.article.create')}}">Создать материал</a>
+          @foreach ($articles as $article)
+          <a class="list-group-item" href="{{route('admin.article.edit',$article)}}">
+              <h4 class="list-group-item-heading">{{$article->title}}</h4>
+              <p class="list-group-item-text">
+                {{$article->categories()->pluck('title')->implode(', ')}}
+              </p>
+            </a>
+            @endforeach 
+          </div>
+          <div class="col-sm-4">
+             <a class="btn btn-block btn-default">Создать Фото</a>
+           {{-- @foreach ($articles as $article) --}}
+             <a class="list-group-item" href="">
+               <h4 class="list-group-item-heading">Название фото</h4>
+               <p class="list-group-item-text">
+                    Количество фото
+               </p>
+             </a>
+            {{-- @endforeach  --}}
+          </div>
     </div>
   </div>
 

@@ -19,8 +19,6 @@ class CreateArticlesTable extends Migration
             $table->string('slug')->unique();                 // http://mysite/admin/article/slug
             $table->text('description_short')->nullable();    //краткое описание
             $table->text('description');                      //новое описание
-            $table->string('image')->nullable();              //фото будет основным
-            $table->boolean('image_show')->nullable();        //печатать фото или нет 
             $table->string('meta_title')->nullable();         //meta загаловок 
             $table->string('meta_description')->nullable();   //meta описанеие
             $table->string('meta_keyword')->nullable();       //ключевые слова
@@ -32,7 +30,11 @@ class CreateArticlesTable extends Migration
         });
     }
 
-   
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
     public function down()
     {
         Schema::dropIfExists('articles');

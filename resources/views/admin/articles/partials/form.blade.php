@@ -1,4 +1,4 @@
-<label for="">Статус</label>
+ <label for="">Статус</label>
 <select class="form-control" name="published">
   @if (isset($article->id))
     <option value="0" @if ($article->published == 0) selected="" @endif>Не опубликовано</option>
@@ -25,8 +25,23 @@
 
 <label for="">Полное описание</label>
 <textarea class="form-control" id="description" name="description">{{$article->description or ""}}</textarea>
+<hr> 
 
-<hr />
+<h4>Загрузка Фото </h4> 
+
+<label for=""> Фото 1</label>
+ <input type="file" name="image[]" value="1">
+ <hr>
+ <label for="">Фото 2</label>
+ <input type="file" name="image[]" value="2">
+  <hr>
+ <label for="">Фото 3</label>
+ <input type="file" name="image[]" value="3">
+  <hr>
+ <label for="">Фото 4</label>
+ <input type="file" name="image[]" value="4">
+<hr>
+
 
 <label for="">Мета заголовок</label>
 <input type="text" class="form-control" name="meta_title" placeholder="Мета заголовок" value="{{$article->meta_title or ""}}">
@@ -37,6 +52,6 @@
 <label for="">Ключевые слова</label>
 <input type="text" class="form-control" name="meta_keyword" placeholder="Ключевые слова, через запятую" value="{{$article->meta_keyword or ""}}">
 
-<hr />
 
-<input class="btn btn-primary" type="submit" value="Сохранить">
+
+<input class="btn btn-primary" type="submit" value="Сохранить"> 
