@@ -10,8 +10,14 @@
 				<div class="col-sm-4 col-md-6" >
 		 			<div class="row">
 		        	  <div class="col-sm-12">
-			          <img src="{{$article->image}}" alt="" height="400" width="500">
-			     		<h2><a href="{{route('article', $article->slug)}}">{{$article->title}}</a></h2>
+						
+						 @isset($article->images()->first()->url)
+        
+                             <img class="img-fluid" src="{{ asset('/storage/'.$article->images()->first()->url) }}" alt="">
+         
+                        @endisset
+			          {{--} <img src="{{$article->images()->url}}" alt="" height="400" width="500"> --}}
+			     		<h4><a href="{{route('article', $article->slug)}}">{{$article->title}}</a></h4>
 				    	<p>{!!$article->description_short!!}</p>
 			          </div>
 			        </div>
@@ -24,3 +30,7 @@
 	</div>
 
 @endsection
+
+
+
+ 

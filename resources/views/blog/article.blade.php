@@ -5,6 +5,7 @@
 @section('meta_description', $article->meta_description)
 
 @section('content')
+    <h1>{{$article->viewed}}</h1>
 	<div class="container">
 		<div class="row">
 			<div class="col-sm-12">

@@ -240,7 +240,8 @@ return [
         'Image' => Intervention\Image\Facades\Image::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
 	    'View'      => Illuminate\Support\Facades\View::class,
-	    'Form'      => Illuminate\Html\FormFacade::class,
+        'Form'      => Illuminate\Html\FormFacade::class,
+        'Carbon' => 'Carbon\Carbon',
 
 
     ],

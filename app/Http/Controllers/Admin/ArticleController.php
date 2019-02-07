@@ -17,7 +17,7 @@ class ArticleController extends Controller
     public function index()
     {
         return view('admin.articles.index', [
-            'articles' => Article::orderBy('created_at', 'desc')->paginate(10)
+            'articles' => Article::orderBy('created_at', 'desc')->paginate(5)
         ]);
     }
 
@@ -38,6 +38,7 @@ class ArticleController extends Controller
         
       
        $article = Article::create($request->all());
+    
             
         //Images
         for ($i=0; $i <4 ; $i++) {

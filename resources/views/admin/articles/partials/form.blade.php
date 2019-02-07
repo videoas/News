@@ -20,6 +20,9 @@
   @include('admin.articles.partials.categories', ['categories' => $categories])
 </select>
 
+   <input type="hidden" name="viewed" value="0">
+
+
 <label for="">Краткое описание</label>
 <textarea class="form-control" id="description_short" name="description_short">{{$article->description_short or ""}}</textarea>
 
@@ -38,6 +41,11 @@
  <label for="">Фото 3</label>
  <input type="file" name="image[]" value="3">
   <hr>
+
+ <label for="">Фото 4</label>
+ <input type="file" name="image[]" value="4">
+<hr>
+ <hr>
  <label for="">Фото 4</label>
  <input type="file" name="image[]" value="4">
 <hr>
